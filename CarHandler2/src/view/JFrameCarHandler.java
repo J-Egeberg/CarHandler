@@ -231,6 +231,11 @@ public class JFrameCarHandler extends javax.swing.JFrame {
         getContentPane().add(jButtonRentCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 540, 140, -1));
 
         jButtonAddCar.setText("Add Car");
+        jButtonAddCar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddCarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonAddCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 130, -1));
 
         jButtonDeleteCar.setText("Delete Car");
@@ -291,6 +296,11 @@ public class JFrameCarHandler extends javax.swing.JFrame {
     private void jButtonReturnCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReturnCarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonReturnCarActionPerformed
+
+    private void jButtonAddCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddCarActionPerformed
+    control.addNewCar();
+     updateCarTableModel();
+    }//GEN-LAST:event_jButtonAddCarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAddCar;

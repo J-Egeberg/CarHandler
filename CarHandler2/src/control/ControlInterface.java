@@ -27,6 +27,33 @@ public interface ControlInterface {
     
     public void setCarlist(ArrayList<Car> carlist);
     
+    public void addNewCar();
+    
+    public void deleteCar();
+    
+    public void searchCar();
+    
+    public void rentCar();
+    
+    public void returnCar();
+    
+    public void displayRentingInformation();
+    
     public void sortAllCarsByGuestID();
     
+    public void showAllAvailableCars ();
+    
+    public void showAllCarsRentedOut();
+    
+    public void showNumberOfCarsRentedOut();
+    
+    public void showTotalDistanceDrivenForAllCars();
+    
+    public void showMoneyEarnedForAllCars();
+    
+    public void showCarsWhichNeedRepair();
+    
+    public void showAllCarsSortedByMostRented();
+    
+    public void showAllCarsSortedByHighestEarnings();
 }
