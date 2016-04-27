@@ -7,6 +7,8 @@ package view;
 
 import control.Control;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import model.Car;
 import javax.swing.table.DefaultTableModel;
 
@@ -23,11 +25,15 @@ public class JFrameCarHandler extends javax.swing.JFrame {
      */
     public JFrameCarHandler(Control control) {
         initComponents();
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+            ex.printStackTrace();
+        }
         this.control = control;
         jTableCarList.setModel(getCarListToTableModel());
         fillPeriodComboBox();
         this.setVisible(true);
-
     }
 
     public DefaultTableModel getCarListToTableModel() {
@@ -102,81 +108,90 @@ public class JFrameCarHandler extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonShowAllCarsSortedByHighestEarning.setText("Show all cars sorted by highest earnings");
+        jButtonShowAllCarsSortedByHighestEarning.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonShowAllCarsSortedByHighestEarning.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonShowAllCarsSortedByHighestEarningActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonShowAllCarsSortedByHighestEarning, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 440, 220, -1));
+        getContentPane().add(jButtonShowAllCarsSortedByHighestEarning, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 450, 320, -1));
 
         jLabelCarTitle.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabelCarTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelCarTitle.setText("Car Administration");
-        getContentPane().add(jLabelCarTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 580, 39));
+        getContentPane().add(jLabelCarTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 930, 39));
 
         jButtonShowAllCarsRentedByGuestID.setText("Show all cars rented by guest ID");
+        jButtonShowAllCarsRentedByGuestID.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonShowAllCarsRentedByGuestID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonShowAllCarsRentedByGuestIDActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonShowAllCarsRentedByGuestID, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 70, 220, -1));
+        getContentPane().add(jButtonShowAllCarsRentedByGuestID, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, 320, -1));
 
         jButtonShowAllAvailableCars.setText("Show all available cars");
+        jButtonShowAllAvailableCars.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonShowAllAvailableCars.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonShowAllAvailableCarsActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonShowAllAvailableCars, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, 220, -1));
+        getContentPane().add(jButtonShowAllAvailableCars, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 130, 320, -1));
 
         jButtonShowAllCarsRentedOut.setText("Show all cars rented out");
+        jButtonShowAllCarsRentedOut.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonShowAllCarsRentedOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonShowAllCarsRentedOutActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonShowAllCarsRentedOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 220, -1));
+        getContentPane().add(jButtonShowAllCarsRentedOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 170, 320, -1));
 
         jButtonShowNumberOfCarsRentedOut.setText("Show number of cars rented out");
+        jButtonShowNumberOfCarsRentedOut.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonShowNumberOfCarsRentedOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonShowNumberOfCarsRentedOutActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonShowNumberOfCarsRentedOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 240, 220, -1));
+        getContentPane().add(jButtonShowNumberOfCarsRentedOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, 320, -1));
 
         jButtonShowTotalDistanceDrivenForAllCars.setText("Show total distance driven for all cars");
+        jButtonShowTotalDistanceDrivenForAllCars.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonShowTotalDistanceDrivenForAllCars.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonShowTotalDistanceDrivenForAllCarsActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonShowTotalDistanceDrivenForAllCars, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 280, 220, -1));
+        getContentPane().add(jButtonShowTotalDistanceDrivenForAllCars, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 290, 320, -1));
 
         jButtonShowMoneyEarnedForAllCars.setText("Show money earned for all cars");
+        jButtonShowMoneyEarnedForAllCars.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonShowMoneyEarnedForAllCars.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonShowMoneyEarnedForAllCarsActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonShowMoneyEarnedForAllCars, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 320, 220, -1));
+        getContentPane().add(jButtonShowMoneyEarnedForAllCars, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 330, 320, -1));
 
         jButtonShowCarsWhichNeedRepair.setText("Show cars which need repair");
+        jButtonShowCarsWhichNeedRepair.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonShowCarsWhichNeedRepair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonShowCarsWhichNeedRepairActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonShowCarsWhichNeedRepair, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 360, 220, -1));
+        getContentPane().add(jButtonShowCarsWhichNeedRepair, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 370, 320, -1));
 
         jButtonShowAllCarsSortedByMostRented.setText("Show all cars sorted by most rented");
+        jButtonShowAllCarsSortedByMostRented.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonShowAllCarsSortedByMostRented.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonShowAllCarsSortedByMostRentedActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonShowAllCarsSortedByMostRented, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 400, 220, -1));
+        getContentPane().add(jButtonShowAllCarsSortedByMostRented, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 410, 320, -1));
 
         jComboBoxPeriode.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxPeriode.addActionListener(new java.awt.event.ActionListener() {
@@ -184,11 +199,12 @@ public class JFrameCarHandler extends javax.swing.JFrame {
                 jComboBoxPeriodeActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxPeriode, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 220, -1));
+        getContentPane().add(jComboBoxPeriode, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 220, 310, -1));
 
-        jLabelCurrently.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelCurrently.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabelCurrently.setText("Currently");
-        getContentPane().add(jLabelCurrently, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 40, 140, 20));
+        jLabelCurrently.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        getContentPane().add(jLabelCurrently, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 70, 300, 20));
 
         jTableCarList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -206,19 +222,19 @@ public class JFrameCarHandler extends javax.swing.JFrame {
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 590, -1));
 
         jButtonDisplayRentingInformation.setText("Display renting information");
-        getContentPane().add(jButtonDisplayRentingInformation, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 540, 170, -1));
+        getContentPane().add(jButtonDisplayRentingInformation, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 500, 260, -1));
 
         jButtonSearchCar.setText("Search Car");
-        getContentPane().add(jButtonSearchCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 140, -1));
+        getContentPane().add(jButtonSearchCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 500, 140, -1));
 
         jButtonRentCar.setText("Rent Car");
-        getContentPane().add(jButtonRentCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 140, -1));
+        getContentPane().add(jButtonRentCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 540, 140, -1));
 
         jButtonAddCar.setText("Add Car");
-        getContentPane().add(jButtonAddCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 500, 130, -1));
+        getContentPane().add(jButtonAddCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 130, -1));
 
         jButtonDeleteCar.setText("Delete Car");
-        getContentPane().add(jButtonDeleteCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 540, 130, -1));
+        getContentPane().add(jButtonDeleteCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 130, -1));
 
         jButtonReturnCar.setText("Return Car");
         jButtonReturnCar.addActionListener(new java.awt.event.ActionListener() {
@@ -226,7 +242,7 @@ public class JFrameCarHandler extends javax.swing.JFrame {
                 jButtonReturnCarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonReturnCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 500, 170, -1));
+        getContentPane().add(jButtonReturnCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 540, 260, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
