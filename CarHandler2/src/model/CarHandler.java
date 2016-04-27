@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model.carhandler;
+package model;
 
 import java.util.ArrayList;
 
@@ -13,7 +13,13 @@ import java.util.ArrayList;
  */
 public class CarHandler {
     
-    public ArrayList<Car> Cars;
+    private ArrayList<Car> Cars;
+
+    public CarHandler() {
+        carInfo();
+        
+    }
+    
     
     public void carInfo(){
         
@@ -29,7 +35,7 @@ public class CarHandler {
         
     }
 
-    public ArrayList<Car> getCarList() {
+    public ArrayList<Car> getCars() {
         return Cars;
     }
      

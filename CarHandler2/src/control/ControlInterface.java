@@ -3,12 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package control.carhandler;
+package control;
+
+import java.util.ArrayList;
+import model.Car;
 
 /**
  *
  * @author Flinkerfyr
  */
-public interface InterfaceCarHandler {
+public interface ControlInterface {
+    
+    public ArrayList<Car> getCarList();
     
 }

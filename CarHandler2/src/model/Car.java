@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model.carhandler;
+package model;
 
 /**
  *
@@ -41,7 +41,7 @@ public class Car {
                " Carvalue: " + carValue + 
                " Topspeed: " + topSpeed + 
                " Seats" + numberOfSeats +
-               " trunk " + trunkPresent + '}';
+               " trunk " + trunkPresent ;
     }
     
 
