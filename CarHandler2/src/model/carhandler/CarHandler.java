@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Flinkerfyr
  */
-public class CarHandler1 {
+public class CarHandler {
     
     public ArrayList<Car> Cars;
     

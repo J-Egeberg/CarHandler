@@ -9,7 +9,7 @@ package model.carhandler;
  *
  * @author Flinkerfyr
  */
-public class Car1 {
+public class Car {
     
     private String brand; 
     private String model;
@@ -19,7 +19,7 @@ public class Car1 {
     private int numberOfSeats;
     private Boolean trunkPresent;
 
-    public Car1(String brand, String model, int year, int carValue, int topSpeed, int numberOfSeats, Boolean trunkPresent) {
+    public Car(String brand, String model, int year, int carValue, int topSpeed, int numberOfSeats, Boolean trunkPresent) {
         this.brand = brand;
         this.model = model;
         this.year = year;
@@ -29,7 +29,7 @@ public class Car1 {
         this.trunkPresent = trunkPresent;
     }
     
-    public Car1(){
+    public Car(){
     
     }
 

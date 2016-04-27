@@ -5,15 +5,15 @@
  */
 package control.carhandler;
 
-import Model.carhandler.Car;
-import Model.carhandler.CarHandler;
+import model.carhandler.Car;
+import model.carhandler.CarHandler;
 import java.util.ArrayList;
 
 /**
  *
  * @author Flinkerfyr
  */
-public class Control1 implements InterfaceCarHandler {
+public class Control implements InterfaceCarHandler {
     
     public CarHandler handler = new CarHandler();
     

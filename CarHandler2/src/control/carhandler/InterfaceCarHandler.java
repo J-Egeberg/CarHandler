@@ -9,6 +9,6 @@ package control.carhandler;
  *
  * @author Flinkerfyr
  */
-public interface InterfaceCarHandler1 {
+public interface InterfaceCarHandler {
     
 }

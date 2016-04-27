@@ -5,20 +5,20 @@
  */
 package view.carhandler;
 
-import Control.carhandler.Control;
-import Model.carhandler.Car;
+import control.carhandler.Control;
+import model.carhandler.Car;
 import javax.swing.DefaultListModel;
 
 /**
  *
  * @author Flinkerfyr
  */
-public class JFrameCarHandler1 extends javax.swing.JFrame {
+public class JFrameCarHandler extends javax.swing.JFrame {
     public Control control;
     /**
      * Creates new form JFrameCarHandler
      */
-    public JFrameCarHandler1() {
+    public JFrameCarHandler() {
         initComponents();
         control = new Control();
         
@@ -132,21 +132,23 @@ public class JFrameCarHandler1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameCarHandler1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameCarHandler.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameCarHandler1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameCarHandler.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameCarHandler1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameCarHandler.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameCarHandler1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameCarHandler.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameCarHandler1().setVisible(true);
+                new JFrameCarHandler().setVisible(true);
                 
             }
         });
