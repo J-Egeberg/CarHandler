@@ -107,11 +107,16 @@ public class Car implements Comparable {
         if (equals(other)) {
             return 0;
         }
+        
         int carFieldCmp = this.brand.compareTo(other.getBrand());
         if (carFieldCmp == 0) {
-            
+            if (this.carValue < other.getCarValue()) {
+                return 1;
+            }
+            else {
+                return -1;
+            }
         }
-        
         return carFieldCmp;
         
     }

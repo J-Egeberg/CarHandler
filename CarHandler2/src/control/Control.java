@@ -7,6 +7,9 @@ package control;
 
 import model.Car;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 import model.Guest;
 import view.JFrameCarHandler;
 
@@ -15,7 +18,6 @@ import view.JFrameCarHandler;
  * @author Flinkerfyr
  */
 public class Control implements ControlInterface {
-    private CarList handler; 
     private ArrayList<Guest> guestList;
     private ArrayList<Car> carList;
     
@@ -82,9 +84,8 @@ public class Control implements ControlInterface {
 
     @Override
     public void sortAllCarsByGuestID() {
-        //Sort list of cars with Arrays.sort (Remenber to make Cars comparable by GuestID)
-        ArrayList.sort(carList);
-        //Return
+        carList.toArray();
+        ArrayList.sort(carList); //Sort list of cars with Arrays.sort (Remenber to make Cars comparable by GuestID)
     }
     
     
