@@ -7,6 +7,7 @@ package control;
 
 import model.Car;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -18,6 +19,7 @@ import view.JFrameCarHandler;
  * @author Flinkerfyr
  */
 public class Control implements ControlInterface {
+    
     private ArrayList<Guest> guestList;
     private ArrayList<Car> carList;
     
@@ -84,9 +86,91 @@ public class Control implements ControlInterface {
 
     @Override
     public void sortAllCarsByGuestID() {
-        carList.toArray();
-        ArrayList.sort(carList); //Sort list of cars with Arrays.sort (Remenber to make Cars comparable by GuestID)
+        //carList.toArray();
+        //ArrayList.sort(carList); //Sort list of cars with Arrays.sort (Remenber to make Cars comparable by GuestID)
     }
+
+    public void addNewCar() {
+        String cBrand = JOptionPane.showInputDialog("Enter car brand");
+        String cModel = JOptionPane.showInputDialog("Enter car model");
+        int cYear = Integer.parseInt( JOptionPane.showInputDialog("Enter car year"));
+        int cValue = Integer.parseInt( JOptionPane.showInputDialog("Enter car price"));
+        int cTopSpeed = Integer.parseInt( JOptionPane.showInputDialog("Enter topspeed"));
+        int cSeats = Integer.parseInt( JOptionPane.showInputDialog("Enter number of seats"));
+        Boolean cTrunk = Boolean.parseBoolean( JOptionPane.showInputDialog("Type \"true\" if the car has a trunk"));
+
+        carList.add(new Car(cBrand, cModel, cYear, cValue, cTopSpeed, cSeats, cTrunk));
+    }
+
+    @Override
+    public void deleteCar() {
+        String cModel = JOptionPane.showInputDialog("Enter the model you want off the system");
+        carList.remove(this);//
+    }
+
+    @Override
+    public void searchCar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void rentCar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void returnCar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void displayRentingInformation() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void showAllAvailableCars() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void showAllCarsRentedOut() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void showNumberOfCarsRentedOut() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void showTotalDistanceDrivenForAllCars() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void showMoneyEarnedForAllCars() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void showCarsWhichNeedRepair() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void showAllCarsSortedByMostRented() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void showAllCarsSortedByHighestEarnings() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
+    
+    
     
     
     
