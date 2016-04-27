@@ -9,6 +9,7 @@ import model.Car;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import model.Guest;
@@ -86,8 +87,7 @@ public class Control implements ControlInterface {
 
     @Override
     public void sortAllCarsByGuestID() {
-        //carList.toArray();
-        //ArrayList.sort(carList); //Sort list of cars with Arrays.sort (Remenber to make Cars comparable by GuestID)
+        //Missing
     }
 
     public void addNewCar() {
@@ -105,7 +105,7 @@ public class Control implements ControlInterface {
     @Override
     public void deleteCar() {
         String cModel = JOptionPane.showInputDialog("Enter the model you want off the system");
-        carList.remove(this);//
+        carList.remove(this); //
     }
 
     @Override
@@ -160,7 +160,7 @@ public class Control implements ControlInterface {
 
     @Override
     public void showAllCarsSortedByMostRented() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override

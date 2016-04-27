@@ -6,6 +6,7 @@
 package view;
 
 import control.Control;
+import java.util.Collections;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -39,6 +40,8 @@ public class JFrameCarHandler extends javax.swing.JFrame {
     public void updateCarTableModel() {
 
         DefaultTableModel model = new DefaultTableModel();
+        
+        Collections.sort(control.getCarList()); //Sort list of cars with Arrays.sort (Remenber to make Cars comparable by GuestID)
         
         model.addColumn("Brand");
         model.addColumn("Model");
@@ -100,6 +103,7 @@ public class JFrameCarHandler extends javax.swing.JFrame {
         jButtonAddCar = new javax.swing.JButton();
         jButtonDeleteCar = new javax.swing.JButton();
         jButtonReturnCar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         jToggleButton1.setText("jToggleButton1");
 
@@ -113,12 +117,12 @@ public class JFrameCarHandler extends javax.swing.JFrame {
                 jButtonShowAllCarsSortedByHighestEarningActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonShowAllCarsSortedByHighestEarning, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 450, 320, -1));
+        getContentPane().add(jButtonShowAllCarsSortedByHighestEarning, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 440, 320, -1));
 
         jLabelCarTitle.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabelCarTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelCarTitle.setText("Car Administration");
-        getContentPane().add(jLabelCarTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 930, 39));
+        getContentPane().add(jLabelCarTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 830, 39));
 
         jButtonShowAllCarsRentedByGuestID.setText("Show all cars rented by guest ID");
         jButtonShowAllCarsRentedByGuestID.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -127,7 +131,7 @@ public class JFrameCarHandler extends javax.swing.JFrame {
                 jButtonShowAllCarsRentedByGuestIDActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonShowAllCarsRentedByGuestID, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, 320, -1));
+        getContentPane().add(jButtonShowAllCarsRentedByGuestID, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 80, 320, -1));
 
         jButtonShowAllAvailableCars.setText("Show all available cars");
         jButtonShowAllAvailableCars.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -136,7 +140,7 @@ public class JFrameCarHandler extends javax.swing.JFrame {
                 jButtonShowAllAvailableCarsActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonShowAllAvailableCars, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 130, 320, -1));
+        getContentPane().add(jButtonShowAllAvailableCars, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 120, 320, -1));
 
         jButtonShowAllCarsRentedOut.setText("Show all cars rented out");
         jButtonShowAllCarsRentedOut.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -145,7 +149,7 @@ public class JFrameCarHandler extends javax.swing.JFrame {
                 jButtonShowAllCarsRentedOutActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonShowAllCarsRentedOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 170, 320, -1));
+        getContentPane().add(jButtonShowAllCarsRentedOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, 320, -1));
 
         jButtonShowNumberOfCarsRentedOut.setText("Show number of cars rented out");
         jButtonShowNumberOfCarsRentedOut.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -154,7 +158,7 @@ public class JFrameCarHandler extends javax.swing.JFrame {
                 jButtonShowNumberOfCarsRentedOutActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonShowNumberOfCarsRentedOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, 320, -1));
+        getContentPane().add(jButtonShowNumberOfCarsRentedOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 240, 320, -1));
 
         jButtonShowTotalDistanceDrivenForAllCars.setText("Show total distance driven for all cars");
         jButtonShowTotalDistanceDrivenForAllCars.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -163,7 +167,7 @@ public class JFrameCarHandler extends javax.swing.JFrame {
                 jButtonShowTotalDistanceDrivenForAllCarsActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonShowTotalDistanceDrivenForAllCars, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 290, 320, -1));
+        getContentPane().add(jButtonShowTotalDistanceDrivenForAllCars, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 280, 320, -1));
 
         jButtonShowMoneyEarnedForAllCars.setText("Show money earned for all cars");
         jButtonShowMoneyEarnedForAllCars.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -172,7 +176,7 @@ public class JFrameCarHandler extends javax.swing.JFrame {
                 jButtonShowMoneyEarnedForAllCarsActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonShowMoneyEarnedForAllCars, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 330, 320, -1));
+        getContentPane().add(jButtonShowMoneyEarnedForAllCars, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 320, 320, -1));
 
         jButtonShowCarsWhichNeedRepair.setText("Show cars which need repair");
         jButtonShowCarsWhichNeedRepair.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -181,7 +185,7 @@ public class JFrameCarHandler extends javax.swing.JFrame {
                 jButtonShowCarsWhichNeedRepairActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonShowCarsWhichNeedRepair, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 370, 320, -1));
+        getContentPane().add(jButtonShowCarsWhichNeedRepair, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 360, 320, -1));
 
         jButtonShowAllCarsSortedByMostRented.setText("Show all cars sorted by most rented");
         jButtonShowAllCarsSortedByMostRented.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -190,7 +194,7 @@ public class JFrameCarHandler extends javax.swing.JFrame {
                 jButtonShowAllCarsSortedByMostRentedActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonShowAllCarsSortedByMostRented, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 410, 320, -1));
+        getContentPane().add(jButtonShowAllCarsSortedByMostRented, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 400, 320, -1));
 
         jComboBoxPeriode.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxPeriode.addActionListener(new java.awt.event.ActionListener() {
@@ -198,12 +202,12 @@ public class JFrameCarHandler extends javax.swing.JFrame {
                 jComboBoxPeriodeActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxPeriode, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 220, 310, -1));
+        getContentPane().add(jComboBoxPeriode, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 210, 315, -1));
 
         jLabelCurrently.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabelCurrently.setText("Currently");
         jLabelCurrently.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        getContentPane().add(jLabelCurrently, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 70, 300, 20));
+        getContentPane().add(jLabelCurrently, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 60, 300, 20));
 
         jTableCarList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -218,16 +222,16 @@ public class JFrameCarHandler extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTableCarList);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 590, -1));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 590, -1));
 
         jButtonDisplayRentingInformation.setText("Display renting information");
-        getContentPane().add(jButtonDisplayRentingInformation, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 500, 260, -1));
+        getContentPane().add(jButtonDisplayRentingInformation, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 490, 260, -1));
 
         jButtonSearchCar.setText("Search Car");
-        getContentPane().add(jButtonSearchCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 500, 140, -1));
+        getContentPane().add(jButtonSearchCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 490, 140, -1));
 
         jButtonRentCar.setText("Rent Car");
-        getContentPane().add(jButtonRentCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 540, 140, -1));
+        getContentPane().add(jButtonRentCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 530, 140, -1));
 
         jButtonAddCar.setText("Add Car");
         jButtonAddCar.addActionListener(new java.awt.event.ActionListener() {
@@ -235,10 +239,10 @@ public class JFrameCarHandler extends javax.swing.JFrame {
                 jButtonAddCarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAddCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 130, -1));
+        getContentPane().add(jButtonAddCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 130, -1));
 
         jButtonDeleteCar.setText("Delete Car");
-        getContentPane().add(jButtonDeleteCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 130, -1));
+        getContentPane().add(jButtonDeleteCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 130, -1));
 
         jButtonReturnCar.setText("Return Car");
         jButtonReturnCar.addActionListener(new java.awt.event.ActionListener() {
@@ -246,7 +250,16 @@ public class JFrameCarHandler extends javax.swing.JFrame {
                 jButtonReturnCarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonReturnCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 540, 260, -1));
+        getContentPane().add(jButtonReturnCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, 260, -1));
+
+        jButton1.setText("Close");
+        jButton1.setToolTipText("");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 10, 70, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -256,8 +269,9 @@ public class JFrameCarHandler extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonShowAllCarsSortedByHighestEarningActionPerformed
 
     private void jButtonShowAllCarsRentedByGuestIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShowAllCarsRentedByGuestIDActionPerformed
-        control.sortAllCarsByGuestID();//Sort cars in control bu guest ID
-        updateCarTableModel();//Update table model from control
+            //Get the GuestID from the receptionist
+            //
+
     }//GEN-LAST:event_jButtonShowAllCarsRentedByGuestIDActionPerformed
 
     private void jButtonShowAllAvailableCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShowAllAvailableCarsActionPerformed
@@ -301,7 +315,12 @@ public class JFrameCarHandler extends javax.swing.JFrame {
         updateCarTableModel();
     }//GEN-LAST:event_jButtonAddCarActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonAddCar;
     private javax.swing.JButton jButtonDeleteCar;
     private javax.swing.JButton jButtonDisplayRentingInformation;
