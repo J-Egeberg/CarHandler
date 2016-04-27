@@ -103,11 +103,16 @@ public class Car implements Comparable {
 
     @Override
     public int compareTo(Object o) {
-        Car car = (Car) o;
-        if (equals(car)) {
+        Car other = (Car) o;
+        if (equals(other)) {
             return 0;
         }
-        return 1;
+        int carFieldCmp = this.brand.compareTo(other.getBrand());
+        if (carFieldCmp == 0) {
+            
+        }
+        
+        return carFieldCmp;
         
     }
     
