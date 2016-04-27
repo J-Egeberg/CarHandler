@@ -31,12 +31,12 @@ public class JFrameCarHandler extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         this.control = control;
-        jTableCarList.setModel(getCarListToTableModel());
+        jTableCarList.setModel(updateCarTableModel());
         fillPeriodComboBox();
         this.setVisible(true);
     }
 
-    public DefaultTableModel getCarListToTableModel() {
+    public DefaultTableModel updateCarTableModel() {
 
         DefaultTableModel model = new DefaultTableModel();
         
@@ -252,7 +252,8 @@ public class JFrameCarHandler extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonShowAllCarsSortedByHighestEarningActionPerformed
 
     private void jButtonShowAllCarsRentedByGuestIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShowAllCarsRentedByGuestIDActionPerformed
-        // TODO add your handling code here:
+        control.sortAllCarsByGuestID();//Sort cars in control bu guest ID
+        updateCarTableModel();//Update table model from control
     }//GEN-LAST:event_jButtonShowAllCarsRentedByGuestIDActionPerformed
 
     private void jButtonShowAllAvailableCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShowAllAvailableCarsActionPerformed

@@ -9,7 +9,7 @@ package model;
  *
  * @author Flinkerfyr
  */
-public class Car {
+public class Car implements Comparable {
     
     private String brand; 
     private String model;
@@ -30,7 +30,6 @@ public class Car {
     }
     
     public Car(){
-    
     }
 
     @Override
@@ -100,6 +99,16 @@ public class Car {
 
     public void setTrunkPresent(Boolean trunkPresent) {
         this.trunkPresent = trunkPresent;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Car car = (Car) o;
+        if (equals(car)) {
+            return 0;
+        }
+        return 1;
+        
     }
     
     

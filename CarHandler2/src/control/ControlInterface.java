@@ -14,13 +14,19 @@ import model.Guest;
  * @author Flinkerfyr
  */
 public interface ControlInterface {
-    
-    public ArrayList<Car> getCarList();
    
     public void initGuestList();
     
+    public void initCarList();
+    
     public ArrayList<Guest> getGuestList();
+    
+    public ArrayList<Car> getCarList();
    
     public void setGuestList(ArrayList<Guest> guestList);
+    
+    public void setCarlist(ArrayList<Car> carlist);
+    
+    public void sortAllCarsByGuestID();
     
 }
