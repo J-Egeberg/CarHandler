@@ -7,6 +7,7 @@ package control;
 
 import java.util.ArrayList;
 import model.Car;
+import model.Guest;
 
 /**
  *
@@ -15,5 +16,11 @@ import model.Car;
 public interface ControlInterface {
     
     public ArrayList<Car> getCarList();
+   
+    public void initGuestList();
+    
+    public ArrayList<Guest> getGuestList();
+   
+    public void setGuestList(ArrayList<Guest> guestList);
     
 }

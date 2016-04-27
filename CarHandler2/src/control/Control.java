@@ -6,8 +6,9 @@
 package control;
 
 import model.Car;
-import model.CarHandler;
+import model.CarList;
 import java.util.ArrayList;
+import model.Guest;
 import view.JFrameCarHandler;
 
 /**
@@ -15,14 +16,16 @@ import view.JFrameCarHandler;
  * @author Flinkerfyr
  */
 public class Control implements ControlInterface {
-    private CarHandler handler; 
+    private CarList handler; 
+    private ArrayList<Guest> guestList;
     
     public static void main(String[] args) {
        Control control = new Control();     
     }
     
     public Control (){
-        handler = new CarHandler();
+        handler = new CarList();
+        initGuestList();
         JFrameCarHandler jfch = new JFrameCarHandler(this);
     }
     
@@ -30,5 +33,31 @@ public class Control implements ControlInterface {
     public ArrayList<Car> getCarList(){
         return handler.getCars();
     }
+    
+    @Override
+    public void initGuestList(){
+        guestList = new ArrayList();
+    
+        guestList.add(new Guest(00000001));
+        guestList.add(new Guest(00000002));
+        guestList.add(new Guest(00000003));
+        guestList.add(new Guest(00000004));
+        guestList.add(new Guest(00000005));
+        guestList.add(new Guest(00000006));
+        guestList.add(new Guest(00000007));
+             
+    }
+    
+    @Override
+    public ArrayList<Guest> getGuestList(){
+        return this.guestList;
+    }
+    
+    @Override
+    public void setGuestList(ArrayList<Guest> guestList){
+        this.guestList = guestList;
+    }
+    
+    
     
 }

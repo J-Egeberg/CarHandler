@@ -11,11 +11,11 @@ import java.util.ArrayList;
  *
  * @author Flinkerfyr
  */
-public class CarHandler {
+public class CarList {
     
     private ArrayList<Car> Cars;
 
-    public CarHandler() {
+    public CarList() {
         carInfo();
         
     }
