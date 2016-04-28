@@ -69,6 +69,10 @@ public class Control implements ControlInterface {
     public void initRentList() {
         rentList = new ArrayList();
         
+        Date tempStartDate = new Date();
+        
+        rentList.add(new Rent(tempStartDate, 10, car, guest)); //Creating a hardcoded car for the traing of the assignment purpose.
+        
     }
 
     @Override

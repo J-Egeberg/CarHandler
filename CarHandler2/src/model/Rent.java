@@ -20,32 +20,14 @@ public class Rent {
     private Car car;
     private Guest guest;
 
-    /**
-     * This is for contruction the renting before the customer is sure about what cars he want to rent.
-     * @param startDate
-     * @param daysOfRent 
-     */
-    public Rent(Date startDate, int daysOfRent) {
+    public Rent(Date startDate, int daysOfRent, Car car, Guest guest) {
         this.startDate = startDate;
         this.daysOfRent = daysOfRent;
-    }
-
-    /**
-     * This is for the complete renting object construction, when the customer knows the full request at the desk.
-     * @param startDate
-     * @param daysOfRent
-     * @param totalPrice
-     * @param cars
-     * @param guest 
-     */
-    public Rent(Date startDate, int daysOfRent, int totalPrice, Car car, Guest guest) {
-        this.startDate = startDate;
-        this.daysOfRent = daysOfRent;
-        this.totalPrice = totalPrice;
         this.car = car;
         this.guest = guest;
+        calculateTotalPrice();
     }
-
+    
     public Date getStartDate() {
         return startDate;
     }
@@ -60,14 +42,11 @@ public class Rent {
 
     public void setDaysOfRent(int daysOfRent) {
         this.daysOfRent = daysOfRent;
+        calculateTotalPrice();
     }
 
     public int getTotalPrice() {
         return totalPrice;
-    }
-
-    public void setTotalPrice(int totalPrice) {
-        this.totalPrice = totalPrice;
     }
 
     public Car getCar() {
@@ -76,6 +55,7 @@ public class Rent {
 
     public void setCar(Car car) {
         this.car = car;
+        calculateTotalPrice();
     }
 
     public Guest getGuest() {
@@ -95,5 +75,13 @@ public class Rent {
     public String toString() {
         return "Rent{" + "startDate=" + startDate.toString() + ", daysOfRent=" + daysOfRent + ", totalPrice=" + totalPrice + ", car=" + car.toString() + ", guest=" + guest.toString() + '}';
     }
+    
+    /**
+     * For this method to be used, the constructor or setter's have to run in some way, for the new numbers, always to be inserted.
+     * 
+     */
+    public void calculateTotalPrice() {
+        this.totalPrice = (this.car.getCarValue()/1000)*this.daysOfRent;
+    }   
 
 }
