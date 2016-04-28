@@ -8,6 +8,7 @@ package view;
 import control.Control;
 import java.util.Collections;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import model.Car;
@@ -284,9 +285,9 @@ public class JFrameCarHandler extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonShowAllCarsSortedByHighestEarningActionPerformed
 
     private void jButtonShowAllCarsRentedByGuestIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShowAllCarsRentedByGuestIDActionPerformed
-            //Get the GuestID from the receptionist
-            //
-
+        String askedGuestID = JOptionPane.showInputDialog("What Guest ID, do you wanna show cars from?");//Get the GuestID from the receptionist
+            //Search in renting list of Rentings by this User CHANGE carList into this list
+            //Update model boxes
     }//GEN-LAST:event_jButtonShowAllCarsRentedByGuestIDActionPerformed
 
     private void jButtonShowAllAvailableCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShowAllAvailableCarsActionPerformed
