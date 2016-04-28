@@ -17,7 +17,7 @@ public class Rent {
     private Date startDate;
     private int daysOfRent;
     private int totalPrice;
-    private ArrayList<Car> cars;
+    private Car car;
     private Guest guest;
 
     /**
@@ -38,11 +38,11 @@ public class Rent {
      * @param cars
      * @param guest 
      */
-    public Rent(Date startDate, int daysOfRent, int totalPrice, ArrayList<Car> cars, Guest guest) {
+    public Rent(Date startDate, int daysOfRent, int totalPrice, Car car, Guest guest) {
         this.startDate = startDate;
         this.daysOfRent = daysOfRent;
         this.totalPrice = totalPrice;
-        this.cars = cars;
+        this.car = car;
         this.guest = guest;
     }
 
@@ -70,12 +70,12 @@ public class Rent {
         this.totalPrice = totalPrice;
     }
 
-    public ArrayList<Car> getCars() {
-        return cars;
+    public Car getCar() {
+        return car;
     }
 
-    public void setCars(ArrayList<Car> cars) {
-        this.cars = cars;
+    public void setCar(Car car) {
+        this.car = car;
     }
 
     public Guest getGuest() {
@@ -85,7 +85,7 @@ public class Rent {
     public void setGuest(Guest guest) {
         this.guest = guest;
     }
-
+    
     /**
      * This prints out the order as it is, without the car list, just for display to system, not to the customer.
      * You need to loop the cars to get the information out about the cars.
@@ -93,7 +93,7 @@ public class Rent {
      */
     @Override
     public String toString() {
-        return "Renting{" + "startDate=" + startDate + ", daysOfRent=" + daysOfRent + ", totalPrice=" + totalPrice + ", guest=" + guest + '}';
+        return "Rent{" + "startDate=" + startDate.toString() + ", daysOfRent=" + daysOfRent + ", totalPrice=" + totalPrice + ", car=" + car.toString() + ", guest=" + guest.toString() + '}';
     }
-    
+
 }

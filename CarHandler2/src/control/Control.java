@@ -13,6 +13,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import model.Guest;
+import model.Rent;
 import view.JFrameCarHandler;
 
 /**
@@ -23,6 +24,7 @@ public class Control implements ControlInterface {
 
     private ArrayList<Guest> guestList;
     private ArrayList<Car> carList;
+    private ArrayList<Rent> rentList;
 
     public static void main(String[] args) {
         Control control = new Control();
@@ -61,6 +63,12 @@ public class Control implements ControlInterface {
         carList.add(new Car("Ferrari", "F458", 2015, 590000, 310, 2, false));
         carList.add(new Car("Ferrari", "Enzo", 2015, 390000, 330, 2, false));
 
+    }
+    
+    @Override
+    public void initRentList() {
+        rentList = new ArrayList();
+        
     }
 
     @Override

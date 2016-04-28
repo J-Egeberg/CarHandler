@@ -19,6 +19,8 @@ public interface ControlInterface {
     
     public void initCarList();
     
+    public void initRentList();
+    
     public ArrayList<Guest> getGuestList();
     
     public ArrayList<Car> getCarList();
