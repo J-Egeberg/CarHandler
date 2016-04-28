@@ -42,7 +42,7 @@ public class JFrameCarHandler extends javax.swing.JFrame {
 
         DefaultTableModel model = new DefaultTableModel();
         
-        Collections.sort(control.getCarList()); //Sort list of cars with Arrays.sort (Remenber to make Cars comparable by GuestID)
+        Collections.sort(control.getCarListForDisplay()); //Sort list of cars with Arrays.sort (Remenber to make Cars comparable by GuestID)
         
         model.addColumn("Brand");
         model.addColumn("Model");
@@ -51,10 +51,10 @@ public class JFrameCarHandler extends javax.swing.JFrame {
         model.addColumn("Topspeed");
         model.addColumn("Seats");
         model.addColumn("Trunk");
-        model.setRowCount(control.getCarList().size());
+        model.setRowCount(control.getCarListForDisplay().size());
         int r=0;
         
-        for (Car s : control.getCarList()) {
+        for (Car s : control.getCarListForDisplay()) {
             model.setValueAt(s.getBrand(), r, 0);
             model.setValueAt(s.getModel(), r, 1);
             model.setValueAt(s.getYear(), r, 2);
@@ -285,9 +285,10 @@ public class JFrameCarHandler extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonShowAllCarsSortedByHighestEarningActionPerformed
 
     private void jButtonShowAllCarsRentedByGuestIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShowAllCarsRentedByGuestIDActionPerformed
-        String askedGuestID = JOptionPane.showInputDialog("What Guest ID, do you wanna show cars from?");//Get the GuestID from the receptionist
-            //Search in renting list of Rentings by this User CHANGE carList into this list
-            //Update model boxes
+        String askedGuestID = JOptionPane.showInputDialog("What Guest ID, do you wanna show cars from?"); //Get the GuestID from the receptionist
+        int tempGuestID = Integer.parseInt(askedGuestID); //Parsing guestID to String, error handling on this, is for future projects.
+        control.setCarListToCarsRentedByGuestID(tempGuestID); //Search in renting list of Rentings by this User CHANGE carList into this list
+        updateCarTableModel();//Update Car Table
     }//GEN-LAST:event_jButtonShowAllCarsRentedByGuestIDActionPerformed
 
     private void jButtonShowAllAvailableCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShowAllAvailableCarsActionPerformed

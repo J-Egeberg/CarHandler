@@ -8,6 +8,7 @@ package control;
 import java.util.ArrayList;
 import model.Car;
 import model.Guest;
+import model.Rent;
 
 /**
  *
@@ -21,13 +22,29 @@ public interface ControlInterface {
     
     public void initRentList();
     
-    public ArrayList<Guest> getGuestList();
-    
     public ArrayList<Car> getCarList();
-   
-    public void setGuestList(ArrayList<Guest> guestList);
+
+    public void setCarList(ArrayList<Car> carList);
+
+    public ArrayList<Car> getCarListForDisplay();
+
+    public void setCarListForDisplay(ArrayList<Car> carListForDisplay);
+
+    public ArrayList<Rent> getRentList();
+
+    public void setRentList(ArrayList<Rent> rentList);
     
-    public void setCarlist(ArrayList<Car> carlist);
+    public ArrayList<Guest> getGuestList();
+
+    public void setGuestList(ArrayList<Guest> guestList);
+
+    public ArrayList<Rent> getRentListForDisplay();
+
+    public void setRentListForDisplay(ArrayList<Rent> rentListForDisplay);
+
+    public ArrayList<Guest> getGuestListForDisplay();
+
+    public void setGuestListForDisplay(ArrayList<Guest> guestListForDisplay);
     
     public void addNewCar();
     
@@ -41,7 +58,7 @@ public interface ControlInterface {
     
     public void displayRentingInformation();
     
-    public void sortAllCarsByGuestID();
+    public void setCarListToCarsRentedByGuestID(int askedGuestID);
     
     public void showAllAvailableCars ();
     
