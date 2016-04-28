@@ -101,9 +101,9 @@ public class JFrameCarHandler extends javax.swing.JFrame {
         jButtonSearchCar = new javax.swing.JButton();
         jButtonRentCar = new javax.swing.JButton();
         jButtonAddCar = new javax.swing.JButton();
-        jButtonDeleteCar = new javax.swing.JButton();
         jButtonReturnCar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButtonDeleteCar = new javax.swing.JButton();
 
         jToggleButton1.setText("jToggleButton1");
 
@@ -231,6 +231,11 @@ public class JFrameCarHandler extends javax.swing.JFrame {
         getContentPane().add(jButtonSearchCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 490, 140, -1));
 
         jButtonRentCar.setText("Rent Car");
+        jButtonRentCar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRentCarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonRentCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 530, 140, -1));
 
         jButtonAddCar.setText("Add Car");
@@ -240,9 +245,6 @@ public class JFrameCarHandler extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonAddCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 130, -1));
-
-        jButtonDeleteCar.setText("Delete Car");
-        getContentPane().add(jButtonDeleteCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 130, -1));
 
         jButtonReturnCar.setText("Return Car");
         jButtonReturnCar.addActionListener(new java.awt.event.ActionListener() {
@@ -260,6 +262,14 @@ public class JFrameCarHandler extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 10, 70, -1));
+
+        jButtonDeleteCar.setText("Delete car");
+        jButtonDeleteCar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDeleteCarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonDeleteCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 130, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -318,6 +328,14 @@ public class JFrameCarHandler extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButtonRentCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRentCarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonRentCarActionPerformed
+
+    private void jButtonDeleteCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeleteCarActionPerformed
+        control.deleteCar();
+    }//GEN-LAST:event_jButtonDeleteCarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
