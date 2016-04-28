@@ -12,7 +12,7 @@ import java.util.Date;
  *
  * @author scheldejonas
  */
-public class Renting {
+public class Rent {
     
     private Date startDate;
     private int daysOfRent;
@@ -25,7 +25,7 @@ public class Renting {
      * @param startDate
      * @param daysOfRent 
      */
-    public Renting(Date startDate, int daysOfRent) {
+    public Rent(Date startDate, int daysOfRent) {
         this.startDate = startDate;
         this.daysOfRent = daysOfRent;
     }
@@ -38,7 +38,7 @@ public class Renting {
      * @param cars
      * @param guest 
      */
-    public Renting(Date startDate, int daysOfRent, int totalPrice, ArrayList<Car> cars, Guest guest) {
+    public Rent(Date startDate, int daysOfRent, int totalPrice, ArrayList<Car> cars, Guest guest) {
         this.startDate = startDate;
         this.daysOfRent = daysOfRent;
         this.totalPrice = totalPrice;
