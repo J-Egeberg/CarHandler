@@ -335,6 +335,7 @@ public class JFrameCarHandler extends javax.swing.JFrame {
 
     private void jButtonDeleteCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeleteCarActionPerformed
     control.deleteCar();
+    updateCarTableModel();
     }//GEN-LAST:event_jButtonDeleteCarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
