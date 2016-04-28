@@ -102,18 +102,20 @@ public class Control implements ControlInterface {
 
     @Override
     public void deleteCar() {
-        String cModel = JOptionPane.showInputDialog("Enter the model you want off the system");
-        Boolean checker = true;
-        for (int i = 0; i <= carList.size(); i++) {
-            if (carList.contains(cModel)){
-                carList.remove(i);
-            }
-        }
+        String cBrand = JOptionPane.showInputDialog("Enter car brand");
+        String cModel = JOptionPane.showInputDialog("Enter car model");
+        int cYear = Integer.parseInt(JOptionPane.showInputDialog("Enter car year"));
+        int cValue = Integer.parseInt(JOptionPane.showInputDialog("Enter car price"));
+        int cTopSpeed = Integer.parseInt(JOptionPane.showInputDialog("Enter topspeed"));
+        int cSeats = Integer.parseInt(JOptionPane.showInputDialog("Enter number of seats"));
+        Boolean cTrunk = Boolean.parseBoolean(JOptionPane.showInputDialog("Type \"true\" if the car has a trunk"));
+
+        carList.remove(new Car(cBrand, cModel, cYear, cValue, cTopSpeed, cSeats, cTrunk));
     }
 
     @Override
     public void searchCar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
