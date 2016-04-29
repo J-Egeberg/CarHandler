@@ -18,14 +18,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Flinkerfyr
  */
-public class JFrameCarHandler extends javax.swing.JFrame {
+public class JframeCarAdministration extends javax.swing.JFrame {
 
     private Control control;
 
     /**
      * Creates new form JFrameCarHandler
      */
-    public JFrameCarHandler(Control control) {
+    public JframeCarAdministration(Control control) {
         initComponents();
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -285,9 +285,7 @@ public class JFrameCarHandler extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonShowAllCarsSortedByHighestEarningActionPerformed
 
     private void jButtonShowAllCarsRentedByGuestIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShowAllCarsRentedByGuestIDActionPerformed
-        String askedGuestID = JOptionPane.showInputDialog("What Guest ID, do you wanna show cars from?"); //Get the GuestID from the receptionist
-        int tempGuestID = Integer.parseInt(askedGuestID); //Parsing guestID to String, error handling on this, is for future projects.
-        control.setCarListToCarsRentedByGuestID(tempGuestID); //Search in renting list of Rentings by this User CHANGE carList into this list
+        control.setCarListToCarsRentedByChoosenGuest(); //Search in renting list of Rentings by this User CHANGE carList into this list
         updateCarTableModel();//Update Car Table
     }//GEN-LAST:event_jButtonShowAllCarsRentedByGuestIDActionPerformed
 
@@ -341,8 +339,8 @@ public class JFrameCarHandler extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonRentCarActionPerformed
 
     private void jButtonDeleteCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeleteCarActionPerformed
-    control.deleteCar();
-    updateCarTableModel();
+        control.deleteCar();
+        updateCarTableModel();
     }//GEN-LAST:event_jButtonDeleteCarActionPerformed
 
     private void jButtonSearchCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSearchCarActionPerformed

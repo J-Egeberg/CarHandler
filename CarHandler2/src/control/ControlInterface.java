@@ -58,8 +58,6 @@ public interface ControlInterface {
     
     public void displayRentingInformation();
     
-    public void setCarListToCarsRentedByGuestID(int askedGuestID);
-    
     public void showAllAvailableCars ();
     
     public void showAllCarsRentedOut();
@@ -75,4 +73,10 @@ public interface ControlInterface {
     public void showAllCarsSortedByMostRented();
     
     public void showAllCarsSortedByHighestEarnings();
+    
+    public void setCarListToCarsRentedByChoosenGuest();
+    
+    public void setChoosenGuest(int choosenGuestID);
+    
+    public void askUserToChooseGuest();
 }
