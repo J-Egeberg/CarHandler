@@ -21,7 +21,8 @@ import java.util.Date;
 import java.util.List;
 import model.Guest;
 import model.Rent;
-import view.JFrameCarHandler;
+import view.JframeCarAdministration;
+import view.JframeGuestList;
 
 /**
  *
@@ -34,30 +35,31 @@ public class Control implements ControlInterface {
     }
 
     private ArrayList<Guest> guestList;
+    private ArrayList<Guest> guestListForDisplay;
+    private Guest choosenGuest;
     private ArrayList<Car> carList;
     private ArrayList<Car> carListForDisplay;
     private ArrayList<Rent> rentList;
     private ArrayList<Rent> rentListForDisplay;
-    private ArrayList<Guest> guestListForDisplay;
 
     public Control() {
         initGuestList();
         initCarList();
         initRentList();
-        JFrameCarHandler jfch = new JFrameCarHandler(this);
+        JframeCarAdministration jfch = new JframeCarAdministration(this);
     }
 
     @Override
     public void initGuestList() {
         guestList = new ArrayList();
 
-        guestList.add(new Guest(00000001));
-        guestList.add(new Guest(00000002));
-        guestList.add(new Guest(00000003));
-        guestList.add(new Guest(00000004));
-        guestList.add(new Guest(00000005));
-        guestList.add(new Guest(00000006));
-        guestList.add(new Guest(00000007));
+        guestList.add(new Guest(00000001,"Matt Singenbird"));
+        guestList.add(new Guest(00000002,"Tom Cracken"));
+        guestList.add(new Guest(00000003,"Mark Minseen"));
+        guestList.add(new Guest(00000004,"Mark Lightweight"));
+        guestList.add(new Guest(00000005,"Ann Livingchild"));
+        guestList.add(new Guest(00000006,"Manno Laaz"));
+        guestList.add(new Guest(00000007,"Luiz Gomez"));
         
         guestListForDisplay = guestList;
     }
@@ -98,7 +100,7 @@ public class Control implements ControlInterface {
         rentList.add(new Rent(oldTempStartDate, 10, carList.get(3), guestList.get(4))); //Creating a hardcoded rent for the traing of the assignment purpose.
         rentList.add(new Rent(oldestTempStartDate, 10, carList.get(0), guestList.get(5))); //Creating a hardcoded rent for the traing of the assignment purpose.
 
-        rentList = rentListForDisplay;
+        rentListForDisplay = rentList;
     }
 
     @Override
@@ -248,12 +250,33 @@ public class Control implements ControlInterface {
     }
     
     @Override
-    public void setCarListToCarsRentedByGuestID(int askedGuestID) {
-        for (Rent rent : rentList) {
-            if (rent.getGuest().getID() != askedGuestID) {
-                
+    public void setCarListToCarsRentedByChoosenGuest() {
+        
+        askUserToChooseGuest(); //Asks the user to choose a guest and sets it in controller.
+        choosenGuest = new Guest(-1,"");
+        //TODO - Missing the program to wait for choosen GuestID choosen. or split it up.
+        for (Rent rent : rentList) { //Loops all rentings
+            if (rent.getGuest().getID() != choosenGuest.getID()) { //Checks if the renting is the choosen guest
+                long miliSecondsFromStartDate = new Date().getTime() - rent.getStartDate().getTime(); //Preparing for current filter.
+                if (miliSecondsFromStartDate < (rent.getDaysOfRent()*24*60*60)) { //Checks if rent is currently.
+                    carListForDisplay.add(rent.getCar()); //Adds the car to be displayed
+                }
             }
         }
+    }
+
+    @Override
+    public void setChoosenGuest(int choosenGuestID) {
+        for (Guest guest : guestList) {
+            if (guest.getID() == choosenGuestID) {
+                this.choosenGuest = guest;
+            }
+        }
+    }
+
+    @Override
+    public void askUserToChooseGuest() {
+        JframeGuestList guestFrame = new JframeGuestList(this);
     }
 
 }
