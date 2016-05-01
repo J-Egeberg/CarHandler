@@ -14,11 +14,7 @@ package control;
 import model.Car;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Date;
-import java.util.List;
 import model.Guest;
 import model.Rent;
 import view.JframeCarAdministration;
@@ -41,6 +37,7 @@ public class Control implements ControlInterface {
     private ArrayList<Car> carListForDisplay;
     private ArrayList<Rent> rentList;
     private ArrayList<Rent> rentListForDisplay;
+    private JframeCarAdministration administrationFrame;
 
     public Control() {
         initGuestList();
@@ -250,19 +247,18 @@ public class Control implements ControlInterface {
     }
     
     @Override
-    public void setCarListToCarsRentedByChoosenGuest() {
-        
-        askUserToChooseGuest(); //Asks the user to choose a guest and sets it in controller.
-        choosenGuest = new Guest(-1,"");
-        //TODO - Missing the program to wait for choosen GuestID choosen. or split it up.
+    public void setCarListForDisplayToCarsRentedByChoosenGuest() {
+        carListForDisplay = new ArrayList();
         for (Rent rent : rentList) { //Loops all rentings
-            if (rent.getGuest().getID() != choosenGuest.getID()) { //Checks if the renting is the choosen guest
+            if (rent.getGuest().getID() == choosenGuest.getID()) { //Checks if the renting is the choosen guest
                 long miliSecondsFromStartDate = new Date().getTime() - rent.getStartDate().getTime(); //Preparing for current filter.
                 if (miliSecondsFromStartDate < (rent.getDaysOfRent()*24*60*60)) { //Checks if rent is currently.
                     carListForDisplay.add(rent.getCar()); //Adds the car to be displayed
                 }
             }
         }
+        administrationFrame.setVisible(true);
+        administrationFrame.updateCarTableModel();
     }
 
     @Override
@@ -272,11 +268,34 @@ public class Control implements ControlInterface {
                 this.choosenGuest = guest;
             }
         }
+        setCarListForDisplayToCarsRentedByChoosenGuest();
     }
 
     @Override
-    public void askUserToChooseGuest() {
+    public void startUserChooseBox(JframeCarAdministration administrationFrame) {
+        this.administrationFrame = administrationFrame;
         JframeGuestList guestFrame = new JframeGuestList(this);
+    }
+    
+    @Override
+    public void setCarListForDisplayToAllAvailableCars(JframeCarAdministration administrationFrame) {
+        carListForDisplay = new ArrayList();
+        for (Rent rent : rentList) { //Loops all rentings
+            long miliSecondsFromStartDate = new Date().getTime() - rent.getStartDate().getTime(); //Preparing for current filter.
+            if (miliSecondsFromStartDate < (rent.getDaysOfRent()*24*60*60)) { //Checks if rent is currently.
+                carListForDisplay.add(rent.getCar()); //Adds the car to be displayed
+                System.out.println("bil tilføjet visningsliste.");
+            }
+        }
+        if (!carListForDisplay.isEmpty()) {
+            for (Car car : carList) {
+                for (Rent rent : rentList) {
+                    if ( !(car.equals(rent.getCar())) ){
+                        carListForDisplay.add(car); //Adds cars, which is not rented for the first time.
+                    }
+                }
+            }
+        }
     }
 
 }

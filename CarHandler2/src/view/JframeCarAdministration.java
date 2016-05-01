@@ -285,12 +285,12 @@ public class JframeCarAdministration extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonShowAllCarsSortedByHighestEarningActionPerformed
 
     private void jButtonShowAllCarsRentedByGuestIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShowAllCarsRentedByGuestIDActionPerformed
-        control.setCarListToCarsRentedByChoosenGuest(); //Search in renting list of Rentings by this User CHANGE carList into this list
-        updateCarTableModel();//Update Car Table
+        control.startUserChooseBox(this); //Search in renting list of Rentings by this User CHANGE carList into this list
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonShowAllCarsRentedByGuestIDActionPerformed
 
     private void jButtonShowAllAvailableCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShowAllAvailableCarsActionPerformed
-        // TODO add your handling code here:
+        control.setCarListForDisplayToAllAvailableCars(this);
     }//GEN-LAST:event_jButtonShowAllAvailableCarsActionPerformed
 
     private void jButtonShowAllCarsRentedOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShowAllCarsRentedOutActionPerformed

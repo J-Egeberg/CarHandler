@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import model.Car;
 import model.Guest;
 import model.Rent;
+import view.JframeCarAdministration;
 
 /**
  *
@@ -74,9 +75,11 @@ public interface ControlInterface {
     
     public void showAllCarsSortedByHighestEarnings();
     
-    public void setCarListToCarsRentedByChoosenGuest();
+    public void setCarListForDisplayToCarsRentedByChoosenGuest();
     
     public void setChoosenGuest(int choosenGuestID);
     
-    public void askUserToChooseGuest();
+    public void startUserChooseBox(JframeCarAdministration administrationFrame);
+    
+    public void setCarListForDisplayToAllAvailableCars(JframeCarAdministration administrationFrame);
 }

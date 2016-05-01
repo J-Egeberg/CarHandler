@@ -46,6 +46,11 @@ public class JframeGuestList extends javax.swing.JFrame {
         jTableGuestList.setModel(model);
         jTableGuestList.setEditingColumn(1);
     }
+    
+    public void makeUserChoice() {
+        int recievedGuestID = Integer.parseInt(jTableGuestList.getValueAt(jTableGuestList.getSelectedRow(), 0).toString());
+        control.setChoosenGuest(recievedGuestID);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -96,8 +101,7 @@ public class JframeGuestList extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContinueActionPerformed
-        int recievedGuestID = Integer.parseInt(jTableGuestList.getValueAt(jTableGuestList.getSelectedRow(), 0).toString());
-        control.setChoosenGuest(recievedGuestID);
+        makeUserChoice();
         this.dispose();
     }//GEN-LAST:event_jButtonContinueActionPerformed
 
@@ -107,4 +111,5 @@ public class JframeGuestList extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableGuestList;
     // End of variables declaration//GEN-END:variables
+
 }
